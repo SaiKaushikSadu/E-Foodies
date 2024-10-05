@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Kung Pao Chicken",
+        "price": 12.99,
+        "quantity": 1,
+        "description": "Spicy stir-fried chicken with peanuts and vegetables.",
+        "type": "Chinese",
+        "restaurant": "Dragon Palace",
+        "image":"https://c4.wallpaperflare.com/wallpaper/367/822/458/chicken-wings-fried-food-food-cuisine-wallpaper-preview.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Sushi Platter",
+        "price": 24.99,
+        "quantity": 1,
+        "description": "An assortment of fresh sushi rolls and sashimi.",
+        "type": "Japanese",
+        "restaurant": "Sushi Heaven",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkDYhCG6kPbCkhbHKIkTQEPOG0IoeiGnzp2g&s"
+    },
+    {
+        "id": 3,
+        "name": "Butter Chicken",
+        "price": 14.99,
+        "quantity": 1,
+        "description": "Tender chicken cooked in a creamy tomato sauce.",
+        "type": "Indian",
+        "restaurant": "Spice Route",
+        "image":"https://static.vecteezy.com/system/resources/thumbnails/031/415/202/small_2x/top-view-tasty-food-chicken-tikka-plate-isolated-on-a-black-background-ai-generated-photo.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Pad Thai",
+        "price": 11.99,
+        "quantity": 1,
+        "description": "Stir-fried rice noodles with shrimp, peanuts, and lime.",
+        "type": "Thai",
+        "restaurant": "Bangkok Bistro",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOu9xiSTTEyw55jYyyHl2lNmY83etleb6wTg&s"
+    },
+    {
+        "id": 5,
+        "name": "Margherita Pizza",
+        "price": 10.99,
+        "quantity": 1,
+        "description": "Classic pizza topped with fresh mozzarella and basil.",
+        "type": "Italian",
+        "restaurant": "Pizzeria Italia",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgAQfsi6arBxwgeqTD1Q2wJtbA_R4QjVJsZg&s"
+    },
+    {
+        "id": 6,
+        "name": "Tacos al Pastor",
+        "price": 8.99,
+        "quantity": 1,
+        "description": "Delicious pork tacos with pineapple and cilantro.",
+        "type": "Mexican",
+        "restaurant": "Taqueria El Camino",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWNz8VvyyZssjpenoKqrgxeiHioHIcUXn-Hw&s"
+    },
+    {
+        "id": 7,
+        "name": "Falafel Wrap",
+        "price": 7.99,
+        "quantity": 1,
+        "description": "Crispy falafel wrapped in pita with veggies and tahini sauce.",
+        "type": "Middle Eastern",
+        "restaurant": "Taste of Lebanon",
+        "image":"https://www.shutterstock.com/image-photo/vegetarian-falafel-wraps-avocado-cheese-260nw-413596189.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Beef Stroganoff",
+        "price": 15.99,
+        "quantity": 1,
+        "description": "Tender beef strips cooked in a creamy mushroom sauce.",
+        "type": "Russian",
+        "restaurant": "Borscht & Beyond",
+        "image":"https://static01.nyt.com/images/2017/12/13/dining/13COOKING-BEEFSTROGANOFF/13COOKING-BEEFSTROGANOFF-videoSixteenByNineJumbo1600.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Pancakes Stack",
+        "price": 9.99,
+        "quantity": 1,
+        "description": "Fluffy pancakes served with maple syrup and butter.",
+        "type": "American",
+        "restaurant": "Breakfast Club",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRkjgTX6MMOjtZX8-B9CokyqSu7VF-3qEamw&s"
+    },
+    {
+        "id": 10,
+        "name": "Banh Mi",
+        "price": 6.99,
+        "quantity": 1,
+        "description": "Vietnamese sandwich with grilled pork and pickled vegetables.",
+        "type": "Vietnamese",
+        "restaurant": "Banh Mi Express",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKNZZXbRFWc_IlpmxyrTHQwCyyWYn_FpSt-w&s"
+    }
+]
