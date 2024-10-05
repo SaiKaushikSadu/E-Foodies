@@ -4,6 +4,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
 
@@ -11,26 +12,9 @@ const Navbar = () => {
 
 
     const pages = ['Home', 'Products'];
-    const cartItems = [
-        {
-            name: "Product 1",
-            quantity: 2,
-            cost : 10,
-            image: "https://via.placeholder.com/50", // Placeholder image URL
-        },
-        {
-            name: "Product 2",
-            quantity: 1,
-            cost : 10,
-            image: "https://via.placeholder.com/50", // Placeholder image URL
-        },
-        {
-            name: "Product 3",
-            quantity: 3,
-            cost : 10,
-            image: "https://via.placeholder.com/50", // Placeholder image URL
-        },
-    ];
+
+    const cartItems = useSelector((state) => state.cart.items);
+    // console.log(cartItems)
 
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
@@ -120,24 +104,24 @@ const Navbar = () => {
                                 color: 'inherit',
                                 textDecoration: 'none',
                             }}
-                            onClick={()=>navigate("/")}
+                            onClick={() => navigate("/")}
                         >
                             LOGO
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {/* {pages.map((page) => ( */}
-                                <Button
-                                    onClick={()=>navigate("/")}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >
-                                    Home
-                                </Button>
-                                <Button
-                                    onClick={()=>navigate("/products")}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >
-                                    Products
-                                </Button>
+                            <Button
+                                onClick={() => navigate("/")}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            >
+                                Home
+                            </Button>
+                            <Button
+                                onClick={() => navigate("/products")}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            >
+                                Products
+                            </Button>
                             {/* ))} */}
                         </Box>
                         <Box sx={{ flexGrow: 0 }}>
@@ -162,45 +146,58 @@ const Navbar = () => {
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}
                             >
-                                {cartItems.length > 0 ? (
-                                    cartItems.map((item, index) => (
-                                        <MenuItem key={index} onClick={handleCloseUserMenu}>
-                                            <Box
-                                                sx={{
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'space-between',
-                                                    width: '100%',
-                                                }}
-                                            >
-                                                {/* Product Image */}
+                                {cartItems.length > 0 ?
+                                    (
+                                        <>
+                                            {cartItems.map((item, index) => (
+                                                <MenuItem key={index} onClick={handleCloseUserMenu}>
+                                                    <Box
+                                                        sx={{
+                                                            display: 'flex',
+                                                            alignItems: 'center',
+                                                            justifyContent: 'space-between',
+                                                            width: '100%',
+                                                        }}
+                                                        onClick={() => navigate(`/product/${item.id}`, { state: { product: item } })}
+                                                    >
+                                                        {/* Product Image */}
+                                                        <img
+                                                            src={item.image}
+                                                            alt={item.name}
+                                                            style={{ width: '50px', height: '50px', marginRight: '10px' }}
+                                                        />
+                                                        {/* Product Name */}
+                                                        <Typography sx={{ flexGrow: 1, textAlign: 'left', marginRight: '10px' }}>
+                                                            {item.name}
+                                                        </Typography>
+                                                        {/* Product Quantity */}
+                                                        <Typography sx={{ textAlign: 'right', marginRight: '10px' }}>
+                                                            Qty: {item.quantity}
+                                                        </Typography>
+                                                    </Box>
+                                                </MenuItem>
+                                            ))}
+                                            <MenuItem onClick={() => navigate('/checkout')}>
+                                                <Box sx={{ textAlign: 'center', width: '100%' }}>
+                                                    <Button variant="contained" color="primary" fullWidth>
+                                                        View Cart
+                                                    </Button>
+                                                </Box>
+                                            </MenuItem>
+                                        </>
+                                    )
+                                    :
+                                    (
+                                        <MenuItem onClick={handleCloseUserMenu}>
+                                            <Box sx={{ textAlign: 'center', width: '100%' }}>
                                                 <img
-                                                    src={item.image}
-                                                    alt={item.name}
-                                                    style={{ width: '50px', height: '50px', marginRight: '10px' }}
+                                                    src="/assets/emptyCart.png"
+                                                    alt="Empty Cart"
+                                                    style={{ width: '100px', height: '100px' }}
                                                 />
-                                                {/* Product Name */}
-                                                <Typography sx={{ flexGrow: 1, textAlign: 'left', marginRight: '10px' }}>
-                                                    {item.name}
-                                                </Typography>
-                                                {/* Product Quantity */}
-                                                <Typography sx={{ textAlign: 'right', marginRight: '10px' }}>
-                                                    Qty: {item.quantity}
-                                                </Typography>
                                             </Box>
                                         </MenuItem>
-                                    ))
-                                ) : (
-                                    <MenuItem onClick={handleCloseUserMenu}>
-                                        <Box sx={{ textAlign: 'center', width: '100%' }}>
-                                            <img
-                                                src="/assets/emptyCart.png"
-                                                alt="Empty Cart"
-                                                style={{ width: '100px', height: '100px' }}
-                                            />
-                                        </Box>
-                                    </MenuItem>
-                                )}
+                                    )}
                             </Menu>
                         </Box>
                     </Toolbar>

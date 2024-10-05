@@ -1,24 +1,42 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button, IconButton, CardMedia, Grid, TextField } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { removeItem, updateQuantity } from '../../redux/features/cart/cartSlice';
 
 const IndividualProduct = () => {
-    // Quantity state
-    const [quantity, setQuantity] = useState(1);
 
-    // Dummy product data
-    const product = {
-        name: "Margherita Pizza",
-        price: "$12.99",
-        image: "https://via.placeholder.com/400", // Placeholder image URL
-        type: "Italian",
-        details: "A delicious classic Margherita pizza with mozzarella cheese, tomato sauce, and fresh basil.",
-        restaurant: "Pizza Palace",
+    const location = useLocation();
+    const { product } = location.state; // Get the product from the location state
+    const [quantity, setQuantity] = React.useState(product.quantity); // Initialize quantity
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    // Handle increase and decrease quantity
+    const increaseQuantity = () => {
+        const newQuantity = quantity + 1;
+        setQuantity(newQuantity);
+        dispatch(updateQuantity({ id: product.id, quantity: newQuantity })); // Dispatch Redux action
+    };
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            const newQuantity = quantity - 1;
+            setQuantity(newQuantity);
+            dispatch(updateQuantity({ id: product.id, quantity: newQuantity })); // Dispatch Redux action
+        }
+    };
+
+    // Handle item deletion
+    const handleDelete = () => {
+        dispatch(removeItem(product.id)); // Dispatch Redux action
+        navigate('/products'); // Navigate back to cart after deletion
     };
 
     // Handle increase and decrease quantity
-    const increaseQuantity = () => setQuantity(quantity + 1);
-    const decreaseQuantity = () => quantity > 1 && setQuantity(quantity - 1);
+    // const increaseQuantity = () => setQuantity(quantity + 1);
+    // const decreaseQuantity = () => quantity > 1 && setQuantity(quantity - 1);
 
     return (
         <Box sx={{ padding: '2rem' }}>
@@ -78,7 +96,9 @@ const IndividualProduct = () => {
                         >
                             +
                         </Button>
-                        <IconButton color="secondary" sx={{ ml: 2 }}>
+                        <IconButton style={{ color: 'red' }} sx={{ ml: 2 }}
+                            onClick={handleDelete}
+                        >
                             <DeleteIcon />
                         </IconButton>
                     </Box>

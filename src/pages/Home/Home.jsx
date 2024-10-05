@@ -1,15 +1,18 @@
 import React from 'react'
 import { Box, Typography, Button, Grid } from '@mui/material';
 import Card from "../../components/Card/Card"
+import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
 
+    const navigate = useNavigate();
+
     const categories = ["Pizza", "Burgers", "Sushi", "Desserts", "Drinks"];
     const featuredFoods = [
-        { name: "Margherita Pizza", price: "12.99", image: "https://via.placeholder.com/300" },
-        { name: "Cheeseburger", price: "10.99", image: "https://via.placeholder.com/300" },
-        { name: "Sushi Platter", price: "20.99", image: "https://via.placeholder.com/300" },
+        { name: "Margherita Pizza", price: "10.99", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgAQfsi6arBxwgeqTD1Q2wJtbA_R4QjVJsZg&s" },
+        { name: "Pancakes Stack", price: "9.99", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRkjgTX6MMOjtZX8-B9CokyqSu7VF-3qEamw&s" },
+        { name: "Sushi Platter", price: "24.99", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkDYhCG6kPbCkhbHKIkTQEPOG0IoeiGnzp2g&s" },
     ];
 
 
@@ -24,7 +27,9 @@ const Home = () => {
                     <Typography variant="h5" sx={{ mt: 2, color: 'gray' }}>
                         Craving delicious food? We’ve got you covered.
                     </Typography>
-                    <Button variant="contained" color="primary" sx={{ mt: 3 }}>
+                    <Button variant="contained" color="primary" sx={{ mt: 3 }}
+                    onClick={()=>navigate("/products")}
+                    >
                         Order Now
                     </Button>
                 </Box>

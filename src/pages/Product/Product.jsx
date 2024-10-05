@@ -6,7 +6,7 @@ import { selectProducts } from '../../redux/features/product/productSlice';
 
 const Product = () => {
     const products= useSelector(selectProducts)
-    console.log(products)
+    // console.log(products)
     
     return (
         <Box sx={{ padding: 3 }}>
