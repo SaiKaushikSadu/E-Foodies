@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkecommerce_redux=self.webpackChunkecommerce_redux||[]).push([[928],{5928:(e,t,s)=>{s.r(t),s.d(t,{default:()=>n});s(5043);var c=s(579);const n=()=>(0,c.jsx)(c.Fragment,{children:(0,c.jsx)("div",{className:"notfound",style:{display:"flex",justifyContent:"center",alignItems:"center"},children:(0,c.jsx)("img",{src:"https://www.digitalmesh.com/blog/wp-content/uploads/2020/05/404-error.jpg",style:{width:"100vw",height:"90vh"},alt:"404NotFound"})})})}}]);
+//# sourceMappingURL=928.165fbb30.chunk.js.map
