@@ -3,8 +3,11 @@ import { Box, Typography, Grid, Button, IconButton } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from '../../redux/features/cart/cartSlice';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
+
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items);
     const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -84,7 +87,9 @@ const Checkout = () => {
                         {/* Final Total and Checkout Button */}
                         <Box sx={{ textAlign: 'right', mt: 4 }}>
                             <Typography variant="h5" sx={{ mb: 2 }}>Final Total: ${totalPrice.toFixed(2)}</Typography>
-                            <Button variant="contained" color="primary" size="large">Proceed to Checkout</Button>
+                            <Button variant="contained" color="primary" size="large"
+                            onClick={()=>navigate("/payment")}
+                            >Proceed to Checkout</Button>
                         </Box>
                     </Box>
                 )

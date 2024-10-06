@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Avatar, Badge, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
 import React, { useState } from 'react'
 import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -127,7 +127,16 @@ const Navbar = () => {
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open cart">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <ShoppingCartIcon />
+                                    <Badge badgeContent={cartItems.length}
+                                        sx={{
+                                            '& .MuiBadge-badge': {
+                                                backgroundColor: 'red', // Set badge color to red
+                                                color: 'white', // Set text color inside the badge
+                                            },
+                                        }}
+                                    > {/* Replace 4 with the static number of items */}
+                                        <ShoppingCartIcon style={{color:'black'}} />
+                                    </Badge>
                                 </IconButton>
                             </Tooltip>
                             <Menu
