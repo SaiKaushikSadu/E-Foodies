@@ -50,7 +50,7 @@ const cartSlice = createSlice({
         //Action to remove specific quantity of product (not using)
         removeOne: (state, action) => {
             const id = action.payload;
-            const existingItem = state.items.find((i) => i.id === id);
+            let existingItem = state.items.find((i) => i.id === id);
             if (existingItem && existingItem > 1) {
                 existingItem -= 1;
             }

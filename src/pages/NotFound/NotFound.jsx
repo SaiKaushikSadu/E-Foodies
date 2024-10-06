@@ -9,6 +9,7 @@ const NotFound = () => {
             <img
                 src='https://www.digitalmesh.com/blog/wp-content/uploads/2020/05/404-error.jpg'
                 style={{width:'100vw', height:'90vh'}}
+                alt="404NotFound"
             >
             </img>
         </div>
