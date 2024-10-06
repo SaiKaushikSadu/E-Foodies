@@ -19,7 +19,7 @@ const NotFound = lazy(() => import("./pages/NotFound/NotFound")); // Optional
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/E-Foodies" >
       <Suspense fallback={<div>Loading...</div>}>
         <Navbar />
         <Routes>
