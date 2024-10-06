@@ -4,7 +4,6 @@
   "homepage": "https://saikaushiksadu.github.io/E-Foodies",
   "private": true,
   "dependencies": {
-    "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^6.1.2",
     "@mui/material": "^6.1.2",
     "@paypal/react-paypal-js": "^8.7.0",
