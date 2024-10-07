@@ -9,9 +9,6 @@ const Navbar = () => {
 
     const navigate = useNavigate();
 
-
-    const pages = ['Home', 'Products'];
-
     const cartItems = useSelector((state) => state.cart.items);
     // console.log(cartItems)
 
