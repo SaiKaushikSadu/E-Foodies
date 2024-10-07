@@ -9,7 +9,6 @@ const Payment = () => {
 
     const client_id = process.env.REACT_APP_PAYPAL_CLIENT_ID;
 
-    console.log(process.env.REACT_APP_PAYPAL_CLIENT_ID)
 
     return (
         <PayPalScriptProvider options={{ "client-id": client_id }}> {/* Replace with your actual PayPal client ID */}
