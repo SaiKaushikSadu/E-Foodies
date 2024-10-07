@@ -1,3 +1,4 @@
+import { CircularProgress } from "@mui/material";
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import Navbar from "./components/Navbar/Navbar";
@@ -16,11 +17,24 @@ const Payment = lazy(() => import("./pages/Paypal/Payment"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound")); // Optional
 
 
-
 function App() {
+
+  const CenteredLoader = () => (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <CircularProgress />
+    </div>
+  );
+
   return (
     <BrowserRouter basename="/E-Foodies" >
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<CenteredLoader />}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
