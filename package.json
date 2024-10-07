@@ -1,7 +1,6 @@
 {
   "name": "ecommerce_redux",
   "version": "0.1.0",
-  "homepage": "https://saikaushiksadu.github.io/E-Foodies/",
   "private": true,
   "dependencies": {
     "@mui/icons-material": "^6.1.2",
@@ -20,12 +19,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build", 
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync build/ s3://e-foodies --delete"
   },
   "eslintConfig": {
     "extends": [
