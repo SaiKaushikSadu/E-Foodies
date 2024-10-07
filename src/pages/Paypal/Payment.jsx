@@ -23,8 +23,8 @@ const Payment = () => {
                     py: '5rem'
                 }}
             >
-                <Typography variant="h4" sx={{ mb: 3 }}>Complete Your Payment</Typography>
-                <Typography variant="h5" sx={{ mb: 2 }}>Final Total: ${totalPrice.toFixed(2)}</Typography>
+                <Typography variant="h5" sx={{ mb: 3 }}>Complete Your Payment</Typography>
+                <Typography variant="h6" sx={{ mb: 2 }}>Final Total: ${totalPrice.toFixed(2)}</Typography>
 
                 {/* PayPal Button */}
                 <PayPalButtons

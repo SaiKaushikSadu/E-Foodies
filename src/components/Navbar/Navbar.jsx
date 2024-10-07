@@ -1,6 +1,5 @@
 import { AppBar, Badge, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
 import React, { useState } from 'react'
-import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
@@ -81,19 +80,21 @@ const Navbar = () => {
                                 onClose={handleCloseNavMenu}
                                 sx={{ display: { xs: 'block', md: 'none' } }}
                             >
-                                {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                {/* {pages.map((page) => ( */}
+                                    <MenuItem onClick={()=>navigate("/")}>
+                                        <Typography sx={{ textAlign: 'center' }}>Home</Typography>
                                     </MenuItem>
-                                ))}
+                                    <MenuItem onClick={()=>navigate("/products")}>
+                                        <Typography sx={{ textAlign: 'center' }}>Products</Typography>
+                                    </MenuItem>
+                                {/* ))} */}
                             </Menu>
                         </Box>
-                        <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                        {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
                         <Typography
                             variant="h5"
                             noWrap
                             component="a"
-                            href="#app-bar-with-responsive-menu"
                             sx={{
                                 mr: 2,
                                 display: { xs: 'flex', md: 'none' },
@@ -106,7 +107,7 @@ const Navbar = () => {
                             }}
                             onClick={() => navigate("/")}
                         >
-                            LOGO
+                            E-Foodies
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {/* {pages.map((page) => ( */}
