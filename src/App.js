@@ -33,7 +33,7 @@ function App() {
   );
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/E-Foodies">
       <Suspense fallback={<CenteredLoader />}>
         <Navbar />
         <Routes>
